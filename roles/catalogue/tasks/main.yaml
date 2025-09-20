@@ -1,17 +1,17 @@
-  - name: app-setup
+  - name: app setup
     include_role:
       name: common
       tasks_from: app-setup
   
-  - name: nodejs-setup
+  - name: nodejs setup
     include_role:
        name: common
        tasks_from: nodejs-setup
 
-  - name: system-setup
+  - name: systemd setup
     include_role:
        name: common
-       tasks_from: systemd-setup   
+       tasks_from: systemd.yaml 
     
   - name: copy mongodb repo
     ansible.builtin.copy:
