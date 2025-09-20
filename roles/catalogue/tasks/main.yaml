@@ -7,11 +7,6 @@
     include_role:
        name: common
        tasks_from: nodejs-setup
-
-  - name: systemd setup
-    include_role:
-       name: common
-       tasks_from: systemd.yaml 
     
   - name: copy mongodb repo
     ansible.builtin.copy:
@@ -30,6 +25,11 @@
   - name: print catalogue catalogue output 
     ansible.builtin.debug:
       msg: "{{ catalogue_output }}"
+
+  - name: systemd setup
+    include_role:
+       name: common
+       tasks_from: systemd.yaml 
 
   - name: load products
     ansible.builtin.shell: mongosh --host mongodb.ranjithdaws.site < /app/db/master-data.js
