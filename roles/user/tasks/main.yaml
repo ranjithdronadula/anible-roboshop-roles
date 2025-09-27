@@ -1,15 +1,15 @@
-  - name: nodeja-setup
+  - name: nodejs-setup
     include_role:
       name: common
       tasks_from: nodeja-setup
 
   - name: app-setup
-    include-role: 
+    include_role: 
       name: common
       tasks_from: app-setup
 
   - name: systemd-setup
-    include-role:
+    include_role:
       name: common
       tasks_from: systemd
 
