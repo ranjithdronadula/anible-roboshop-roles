@@ -7,16 +7,14 @@
   ansible.builtin.systemd_service:
     daemon_reload: true
 
-# - name: "{{ component }}" 
-#   systemd:
-#     name: "{{ component }}"
-#     state: started
-#     enabled: yes
-#     masked: no
-
-- name: start and enable {{ component }}
-  ansible.builtin.service:
+- name: Start and enable {{ component }}
+  systemd:
     name: "{{ component }}"
-    state: restarted # even app is not running we can restart
     enabled: yes
-    masked: no
+    state: started
+
+# - name: start and enable {{ component }}
+#   ansible.builtin.service:
+#     name: "{{ component }}"
+#     state: restarted # even app is not running we can restart
+#     enabled: yes
