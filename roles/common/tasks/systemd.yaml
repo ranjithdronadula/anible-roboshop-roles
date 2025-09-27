@@ -17,6 +17,5 @@
 - name: start and enable {{ component }}
   ansible.builtin.service:
     name: "{{ component }}"
-    masked: no
     state: restarted # even app is not running we can restart
     enabled: yes
