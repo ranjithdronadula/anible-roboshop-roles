@@ -1,16 +1,16 @@
   - name: nodejs-setup
     include_role:
       name: common
-      tasks_from: nodeja-setup
+      tasks_from: nodejs-setup.yaml
 
   - name: app-setup
     include_role: 
       name: common
-      tasks_from: app-setup
+      tasks_from: app-setup.yaml
 
   - name: systemd-setup
     include_role:
       name: common
-      tasks_from: systemd
+      tasks_from: systemd.yaml
 
   
