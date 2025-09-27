@@ -9,7 +9,7 @@
 
 - name: Unmask {{ component }} service
   ansible.builtin.systemd:
-    name: {{ component }}
+    name: "{{ component }}"  
     masked: false
     become: true
 
