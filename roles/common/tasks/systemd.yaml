@@ -7,11 +7,6 @@
   ansible.builtin.systemd_service:
     daemon_reload: true
 
-- name: Unmask {{ component }} service
-  systemd:
-    name: "{{ component }}.service"
-    masked: no
-
 - name: start and enable {{ component }}
   ansible.builtin.service:
     name: "{{ component }}"
