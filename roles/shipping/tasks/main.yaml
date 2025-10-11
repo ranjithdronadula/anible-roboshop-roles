@@ -13,7 +13,7 @@
     - import
     community.mysql.mysql_db:
       name: all
-      login_user: "{{ MYSQL-ROOT}}"
+      login_user: "{{ MYSQL_ROOT_USER }}"
       login_password: "{{ MYSQL_ROOT_PASSWORD }}"
       login_host: mysql.ranjithdaws.site
       state: import
