@@ -2,4 +2,4 @@ CATALOGUE_HOST: catalogue.ranjithdaws.site
 USER_HOST: user.ranjithdaws.site
 CART_HOST: cart.ranjithdaws.site
 SHIPPING_HOST: shipping.ranjithdaws.site
-PAYMENT: payment.ranjithdaws.site
+PAYMENT_HOST: payment.ranjithdaws.site
