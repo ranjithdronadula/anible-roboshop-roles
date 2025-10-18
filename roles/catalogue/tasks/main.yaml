@@ -31,13 +31,13 @@
     when: catalogue_output.stdout | int < 0  # convert string to integer
       
   - name: systemd setup
-    include_role:
+    include_role:             # tags not working here  and include roles run and find out error in exicution time
        name: common
        tasks_from: systemd.yaml 
 
-  - name: Deployment
-    tags:
-    - deployment
-    import _role:
-      name: common
-      tasks_from: deployment.yaml         
+  # - name: Deployment
+  #   # tags:              # using tags where taks can be run 
+  #   # - deployment
+  #   import _role:        # it runs entire task and finf error before stat code
+  #     name: common
+  #     tasks_from: deployment.yaml         
