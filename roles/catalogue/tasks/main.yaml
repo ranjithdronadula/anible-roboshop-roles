@@ -26,12 +26,16 @@
     ansible.builtin.debug:
       msg: "{{ catalogue_output }}"
 
+  - name: load products
+    ansible.builtin.shell: mongosh --host mongodb.ranjithdaws.site < /app/db/master-data.js
+    when: catalogue_output.stdout | int < 0  # convert string to integer
+      
   - name: systemd setup
     include_role:
        name: common
        tasks_from: systemd.yaml 
 
-  - name: load products
-    ansible.builtin.shell: mongosh --host mongodb.ranjithdaws.site < /app/db/master-data.js
-    when: catalogue_output.stdout | int < 0  # convert string to integer
-      
+  - name: deployment
+    include_role:
+      name: common
+      tasks_from: deployment.yaml         
