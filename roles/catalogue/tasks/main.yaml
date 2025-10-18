@@ -38,6 +38,6 @@
   - name: Deployment
     tags:
     - deployment
-    include _role:
+    import _role:
       name: common
       tasks_from: deployment.yaml         
